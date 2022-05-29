@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Complete Responsive Fashion Website Design Tutorial</title>
+  
+      <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  
+      <!-- font awesome cdn link  -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+      <!-- custom css file link  -->
+      <link rel="stylesheet" href="css/detail.css">
+
+  
+  </head>
+
+ 
+<body>
+    
+    <main id="seller">
+       
+      </main>
+   
+ 
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+  
+  <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyCLuzOenDECWdwUNyr6L1dIM_D118W1XYQ",
+        authDomain: "project-cpm-47e89.firebaseapp.com",
+        projectId: "project-cpm-47e89",
+        storageBucket: "project-cpm-47e89.appspot.com",
+        messagingSenderId: "220386947170",
+        appId: "1:220386947170:web:e8b7da4c1d65e240fba13b",
+        measurementId: "G-HJK7VZDF3H",
+      }
+
+      firebase.initializeApp(firebaseConfig);
+
+      
+ 
+  </script>
+<script>
+
+  const db = firebase.firestore();      
+  var 제목;
+
+var 쿼리스트링 = new URLSearchParams(window.location.search);
+
+  
+db.collection('product_thum').doc(쿼리스트링.get('id')).get().then((result)=>{
+db.collection('product_detail').get().then((결과)=>{
+  결과.forEach((doc)=>{
+    if(doc.data().상품명==result.data().상품명){console.log('디테일 : '+doc.data().상품명)
+    var 템플릿 = `   
+    <header>
+    <nav>
+      <h1>CPM</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">products</a></li>
+        <li><a href="#">featured</a></li>
+        <li class="active"><a href="#">review</a></li>
+        <li><a href="#">contact</a></li>        
+      </ul>
+      <a href="#" class="primary">Login</a>
+    </nav>
+  </header>
+  <section class="product-body">
+    <div class="left-item">
+      <img src="${result.data().썸네일이미지}" alt="">
+      
+    </div>
+    
+    <div class="right-item">
+      <div class="product-title">
+        <h1>${doc.data().상품명}</h1>
+        <span class="price">${doc.data().가격} KRW</span>
+      </div>
+      <span class="product-cat">Labrador Classics</span>
+      <span class="product-sku">Ref: 11002cc</span>
+      <p class="desc"><strong>Description</strong><br>${doc.data().내용}</p>
+      <p class="desc"><strong>PAYMENT</strong></p>
+      
+    </div>
+    
+  </section>  
+  <div class="wrapper">
+    
+    <H1 align="center">PRODUCT INFORMATION </H1>
+  <img class="center" src="${doc.data().상세이미지}" alt="a sand dune">
+ 
+  
+
+       `;
+
+       $('#seller').append(템플릿) }
+    
+
+  })
+})
+
+  
+
+
+
+
+})
+
+
+
+</script>
+  
+</body>
+</html>
+
+

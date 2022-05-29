@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Complete Responsive Fashion Website Design Tutorial</title>
+    
+        <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    
+        <!-- font awesome cdn link  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+        <!-- custom css file link  -->
+        <link rel="stylesheet" href="css/style.css">
+    
+    </head>
+    <header class="header">
+
+        <a href="index.html" class="logo"> <i class="fas fa-shopping-cart"></i> CPM </a>
+    
+        <nav class="navbar">
+            <a href="index.html">home</a>
+            <a href="index.html#products">products</a>
+            
+            <a href="#review">review</a>
+            <a href="#contact">contact</a>
+            <a href="#blogs">blogs</a>
+        </nav>
+    
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div id="search-btn" class="fas fa-search"></div>
+            <a href="#" class="fas fa-shopping-cart"></a>
+            <a href="#" class="fas fa-heart"></a>
+        </div>
+    
+        <form action="" class="search-form">
+            <input type="search" name="" placeholder="search here..." id="search-box">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+    
+    </header>
+<body>
+    <section class="home" id="home">
+
+        <div class="swiper home-slider">
+    
+            <div class="swiper-wrapper">
+    
+                <div class="swiper-slide slide" style="background:url(image/customguide/customguide.png) no-repeat">
+                    <div class="content">
+                        <h3>CPM</h3>
+                       
+                        <span>Step3. Design customization & Save</span></br>
+                        <span>Step4. Click to "Finish" button </span></br>
+                        <span></span>
+                        
+                        
+                        <a  href="upload.html" class="btn">I have finished all of it</a>
+                    </div>
+                </div>
+    
+                <div class="swiper-slide slide" style="background:url(image/customguide/customguide.png) no-repeat">
+                    <div class="content">
+                        <h3>CPM</h3>
+                        <span>if you need anything please let me know</span></br>
+                       
+                        <span></span>
+                        <a target="_blank" href="" class="btn">CPM User's Guide </a>
+                    </div>
+                </div>
+    
+               
+                
+    
+                
+    
+            </div>
+    
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+    
+        </div>
+    
+    </section>
+    
+    <section class="products" id="products">
+
+        <h1 class="heading"> Custom <span>products</span> </h1>
+        <div class="box-container" id="seller">
+        
+    
+        
+               
+        </div>
+    
+    
+    </section>
+    <section class="banner-container" id="make" >
+
+        <div class="banner">
+            <img src="image/shop_banner_img1.jpg" alt="">
+            <div class="content">
+                <span>전문가가 만든 무료 이미지 사용하기</span>
+                <h3>Pixabay</h3>
+                <a target="_blank" href="https://pixabay.com/ko/vectors/search/꽃/" class="btn">go now</a>
+            </div>
+        </div>
+        
+        <div class="banner">
+            <img src="image/shop_banner_img2.jpg" alt="">
+            <div class="content">
+                <span>CPM 샘플 이미지 사용하기</span>
+                <h3>Sample</h3>
+                <a target="_blank" href="https://drive.google.com/drive/folders/1mmZ90eIx9Ltqx_nVdXFjZZWLkEp3vtvf?usp=sharing" class="btn">go now</a>
+            </div>
+        </div>
+    
+        
+    
+     
+    
+      
+        
+    
+    </section>
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+  
+  <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyCLuzOenDECWdwUNyr6L1dIM_D118W1XYQ",
+        authDomain: "project-cpm-47e89.firebaseapp.com",
+        projectId: "project-cpm-47e89",
+        storageBucket: "project-cpm-47e89.appspot.com",
+        messagingSenderId: "220386947170",
+        appId: "1:220386947170:web:e8b7da4c1d65e240fba13b",
+        measurementId: "G-HJK7VZDF3H",
+      }
+
+      firebase.initializeApp(firebaseConfig);
+
+      
+ 
+  </script>
+<script>
+
+  const db = firebase.firestore();      
+  var 제목;
+
+var 쿼리스트링 = new URLSearchParams(window.location.search);
+
+  
+db.collection('mtm').doc(쿼리스트링.get('id')).get().then((result)=>{
+    for(i=0; i<result.data().이미지.length; i++){
+        console.log(result.data().이미지[i])
+        var 템플릿 = `      
+        <h5 class="title">
+            
+            <a  target="_blank" href="https://pixlr.com/e/?image=${result.data().이미지[i]}" >
+                
+                
+                
+                <div class="box-container" >
+        <div class="box" id="seller">
+                
+            <div class="image">
+            <img src="${result.data().이미지[i]}" alt="">
+        </div>  
+        <div class="content">
+            <h3>Select & Save </h3>
+            <h2>basic mtm</h2>
+            <div class="price">
+                <div class="amount">$${result.data().가격}</div>
+                <div class="cut">$${(result.data().가격)*1.2}</div>
+                <div class="offer">20% off</div>
+            </div>
+           
+        </div>
+        </div>
+            </div>
+       
+            </a></h5>
+    `;
+    $('#seller').append(템플릿)
+   
+    }
+    
+     
+
+
+
+
+
+    })
+</script>
+  
+</body>
+</html>
+
+
