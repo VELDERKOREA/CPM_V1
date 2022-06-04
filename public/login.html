@@ -1,77 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete Responsive Fashion Website Design Tutorial</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-
-    <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/login.css">
 
 </head>
+<header class="header" id="navbar"></header>
 <body>
-    <div class="container mt-3">
-        <div class="mb-3">
-          <input type="text" class="form-control" placeholder="name" id="name-new">
-        </div>
-        <div class="mb-3">
-          <input type="email" class="form-control" placeholder="email" id="email-new">
-        </div>
-        <div class="mb-3">
-          <input type="password" class="form-control" placeholder="pw" id="pw-new">
-        </div>
-        <button type="submit" class="btn btn-primary" id="register">가입하기</button>
-     </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-<script src="js/script.js"></script>
-
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
-  
-  <script>
-      var firebaseConfig = {
-        apiKey: "AIzaSyCLuzOenDECWdwUNyr6L1dIM_D118W1XYQ",
-        authDomain: "project-cpm-47e89.firebaseapp.com",
-        projectId: "project-cpm-47e89",
-        storageBucket: "project-cpm-47e89.appspot.com",
-        messagingSenderId: "220386947170",
-        appId: "1:220386947170:web:e8b7da4c1d65e240fba13b",
-        measurementId: "G-HJK7VZDF3H",
-      }
-
-      firebase.initializeApp(firebaseConfig);
-
-      
  
-  </script>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#">
+			<h1>Create Account</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your email for registration</span>
+      <input type="Email" placeholder="Email" id="New_Email" />
+			<input type="password" placeholder="Password" id="New_pw"/>
+			<input type="text" placeholder="Name" id="New_name" />
+			<input type="text" placeholder="address" id="New_address" />
+      <input type="text" placeholder="number" id="New_number" />
+      
+			<button id="signup">Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="#">
+			<h1>Sign in</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your account</span>
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<a href="#">Forgot your password?</a>
+			<button>Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
 
 <script>
-    const db = firebase.firestore();
-    const storage = firebase.storage();
+    var firebaseConfig = {
+      apiKey: "AIzaSyCLuzOenDECWdwUNyr6L1dIM_D118W1XYQ",
+      authDomain: "project-cpm-47e89.firebaseapp.com",
+      projectId: "project-cpm-47e89",
+      storageBucket: "project-cpm-47e89.appspot.com",
+      messagingSenderId: "220386947170",
+      appId: "1:220386947170:web:e8b7da4c1d65e240fba13b",
+      measurementId: "G-HJK7VZDF3H",
+    }
 
+    firebase.initializeApp(firebaseConfig);
 
     
-    firebase.auth().createUserWithEmailAndPassword(이메일, 패스워드).then((result)=>{
-        console.log(result)
-        console.log(result.user)
-    })
 
+</script>
+<script>
+   const db = firebase.firestore();
+  $('#signup').click(function(){
+    console.log()
+  
+  var 아이디 = $('#New_Email').val();
+  var 패스워드 = $('#New_pw').val();
+
+  firebase.auth().createUserWithEmailAndPassword(아이디, 패스워드).then((result)=>{
+    console.log(result.user)
+    userUpdate();
+  })
+})
+
+  function userUpdate(){
+    var user ={
+      이름 : $('#New_name').val(),
+      주소 : $('#New_address').val(),
+      번호 : $('#New_number').val()
+    }
+    db.collection('userdata').add(user)
+  }
+</script>
+<script src="js/Component/navBar.js"></script>
+</body>
+
+<script>
+  const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
 </script>
 
 
-
-
- 
-</body>
 </html>

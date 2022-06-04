@@ -1,16 +1,10 @@
 let searchForm = document.querySelector('.search-form');
 
-document.querySelector('#search-btn').onclick = () =>{
-  searchForm.classList.toggle('active');
-  navbar.classList.remove('active');
-}
+
 
 let navbar = document.querySelector('.navbar');
 
-document.querySelector('#menu-btn').onclick = () =>{
-  navbar.classList.toggle('active');
-  searchForm.classList.remove('active');
-}
+
 
 window.onscroll = () =>{
   searchForm.classList.remove('active');
@@ -416,6 +410,20 @@ function el(nodeName, attributes, ...children) {
 
   return node;
 }
+
+var navBar_temp = `      
+<a href="#products">customed products</a>
+<a href="T-shirts.html">T-shirts</a>
+<a href="mtm.html">MTM</a>
+<a href="shirts.html">shirts</a>
+<a href="sample_logo.html">LOGO</a>
+<a target="_blank" href="https://pixlr.com/e">customizing editor</a>
+<a href="upload.html">Product upload</a>
+<a href="qna.html">NOTICE</a>
+<a href="qna.html">Q&A</a>
+    `;
+
+$('#navbar').append(navBar_temp);
 
 
 

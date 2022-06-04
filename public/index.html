@@ -1,12 +1,14 @@
 <!DOCTYPE html>
+
+
 <html>
   <!DOCTYPE html>
   <html lang="en">
   <head>
       <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Complete Responsive Fashion Website Design Tutorial</title>
+      <title>CPM V1_0529_17:26</title>
   
       <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
   
@@ -15,42 +17,18 @@
   
       <!-- custom css file link  -->
       <link rel="stylesheet" href="css/style.css">
-  
+     
+      
   </head>
 
-  <header class="header">
+  <header class="header" id="navbar">
 
-    <a href="index.html" class="logo"> <i class="fas fa-shopping-cart"></i> CPM </a>
-
-    <nav class="navbar">
-       
-        <a href="#products">customed products</a>
-        <a href="T-shirts.html">T-shirts</a>
-        <a href="mtm.html">MTM</a>
-        <a href="shirts.html">shirts</a>
-        <a href="sample_logo.html">LOGO</a>
-        <a target="_blank" href="https://pixlr.com/e">customizing editor</a>
-        <a href="upload.html">Product upload</a>
-        <a href="qna.html">NOTICE</a>
-        <a href="qna.html">Q&A</a>
-    </nav>
-
-    <div class="icons">
-        <div id="menu-btn" class="fas fa-bars"></div>
-        <div id="search-btn" class="fas fa-search"></div>
-        <a href="#" class="fas fa-shopping-cart"></a>
-        <a href="#" class="fas fa-heart"></a>
-    </div>
-
-    <form action="" class="search-form">
-        <input type="search" name="" placeholder="search here..." id="search-box">
-        <label for="search-box" class="fas fa-search"></label>
-    </form>
+    
 
 </header>
 
 <body>
-
+  
     <section class="home" id="home">
 
         <div class="swiper home-slider">
@@ -168,6 +146,8 @@
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script src="js/script.js"></script>
 
+
+
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
@@ -190,6 +170,14 @@
       
  
   </script>
+ <script>
+    firebase.auth().onAuthStateChanged((user)=>{
+      if (user) {
+        console.log(user)
+        $('#userName').html(user.displayName)
+      }
+    })
+    </script>
 <script>
     const db = firebase.firestore();
     
@@ -228,7 +216,8 @@
     })
   
   </script>
-  
+
+<script type="text/javascript" src="js/Component/navBar.js"></script>
 </body>
 </html>
 

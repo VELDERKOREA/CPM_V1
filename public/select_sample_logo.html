@@ -17,36 +17,7 @@
         <link rel="stylesheet" href="css/style.css">
     
     </head>
-    <header class="header">
-
-        <a href="index.html" class="logo"> <i class="fas fa-shopping-cart"></i> CPM </a>
-    
-        <nav class="navbar">
-       
-            <a href="#products">customed products</a>
-            <a href="T-shirts.html">T-shirts</a>
-            <a href="mtm.html">MTM</a>
-            <a href="shirts.html">shirts</a>
-            <a href="sample_logo.html">LOGO</a>
-            <a target="_blank" href="https://pixlr.com/e">customizing editor</a>
-            <a href="upload.html">Product upload</a>
-            <a href="qna.html">NOTICE</a>
-            <a href="qna.html">Q&A</a>
-        </nav>
-    
-        <div class="icons">
-            <div id="menu-btn" class="fas fa-bars"></div>
-            <div id="search-btn" class="fas fa-search"></div>
-            <a href="#" class="fas fa-shopping-cart"></a>
-            <a href="#" class="fas fa-heart"></a>
-        </div>
-    
-        <form action="" class="search-form">
-            <input type="search" name="" placeholder="search here..." id="search-box">
-            <label for="search-box" class="fas fa-search"></label>
-        </form>
-    
-    </header>
+    <header class="header" id="navbar"></header>
 <body>
     <section class="home" id="home">
 
@@ -207,7 +178,7 @@ db.collection('sample_logo').doc(쿼리스트링.get('id')).get().then((result)=
 
     })
 </script>
-  
+<script src="js/Component/navBar.js"></script>
 </body>
 </html>
 

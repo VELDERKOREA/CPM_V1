@@ -17,27 +17,7 @@
         <link rel="stylesheet" href="css/style.css">
     
     </head>
-    <header class="header">
-
-        <a href="index.html" class="logo"> <i class="fas fa-shopping-cart"></i> CPM </a>
-    
-        <nav class="navbar" id="navbar">
-           
-        </nav>
-    
-        <div class="icons">
-            <div id="menu-btn" class="fas fa-bars"></div>
-            <div id="search-btn" class="fas fa-search"></div>
-            <a href="#" class="fas fa-shopping-cart"></a>
-            <a href="#" class="fas fa-heart"></a>
-        </div>
-    
-        <form action="" class="search-form">
-            <input type="search" name="" placeholder="search here..." id="search-box">
-            <label for="search-box" class="fas fa-search"></label>
-        </form>
-    
-    </header>
+    <header class="header" id="navbar"></header>
 <body>
     <section class="home" id="home">
 
@@ -46,7 +26,7 @@
             <div class="swiper-wrapper">
     
                 <div class="swiper-slide slide" style="background:url(image/customguide/customguide.png) no-repeat">
-                    <div class="content">
+                    <div class="content" id="content">
                         <h3>CPM</h3>
                        
                         <span>Step3. Design customization & Save</span></br>
@@ -54,7 +34,7 @@
                         <span></span>
                         
                         
-                        <a  href="upload.html" class="btn">I have finished all of it</a>
+                       
                     </div>
                 </div>
     
@@ -83,8 +63,8 @@
     </section>
     
     <section class="products" id="products">
-
-        <h1 class="heading"> Custom <span>products</span> </h1>
+        
+        <h1 class="heading"> Custom <span>sample model cut</span> </h1>
         <div class="box-container" id="seller">
         
     
@@ -122,7 +102,7 @@
         
     
     </section>
-  
+
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
 
@@ -159,7 +139,8 @@ var 쿼리스트링 = new URLSearchParams(window.location.search);
 db.collection('shirts').doc(쿼리스트링.get('id')).get().then((result)=>{
     for(i=0; i<result.data().이미지.length; i++){
         console.log(result.data().이미지[i])
-        var 템플릿 = `      
+        var 템플릿1 = `  
+            
         <h5 class="title">
             
             <a  target="_blank" href="https://pixlr.com/e/?image=${result.data().이미지[i]}" >
@@ -174,7 +155,7 @@ db.collection('shirts').doc(쿼리스트링.get('id')).get().then((result)=>{
         </div>  
         <div class="content">
             <h3>Select & Save </h3>
-            <h2>basic shirts</h2>
+            <h2>basic Shirts</h2>
             <div class="price">
                 <div class="amount">$${result.data().가격}</div>
                 <div class="cut">$${(result.data().가격)*1.2}</div>
@@ -187,11 +168,19 @@ db.collection('shirts').doc(쿼리스트링.get('id')).get().then((result)=>{
        
             </a></h5>
     `;
-    $('#seller').append(템플릿)
+
+    
+    $('#seller').append(템플릿1)
+    
    
     }
     
-     
+    var 템플릿2 = `
+    <a  href="upload.html" class="btn">I have finished all of it</a></br>
+    <a href="basic_product.html?id=${result.id}" class="btn">buying basic ${result.id} </a>
+    
+   `
+   $('#content').append(템플릿2)
 
 
 
@@ -199,9 +188,8 @@ db.collection('shirts').doc(쿼리스트링.get('id')).get().then((result)=>{
 
     })
 </script>
-  
-</body>
 <script src="js/Component/navBar.js"></script>
+</body>
 </html>
 
 
