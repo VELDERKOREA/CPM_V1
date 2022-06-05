@@ -1,7 +1,7 @@
 var navBar_temp = `      
 <a href="index.html" class="logo"> <i class="fas fa-shopping-cart"></i> CPM </a>
 
-<nav class="navbar">
+<nav class="navbar" id="navbar">
    
     <a href="#products">customed products</a>
     <a href="T-shirts.html">T-shirts</a>
@@ -15,11 +15,13 @@ var navBar_temp = `
 </nav>
 
 <div class="icons">
-    <a href="login.html" >LOGIN</a>
+   
+    <a id="userName"></a>
+    <button id="logout"></button>
     <div id="menu-btn" class="fas fa-bars"></div>
     <div id="search-btn" class="fas fa-search"></div>
     <a href="#" class="fas fa-shopping-cart"></a>
-    <a href="#" class="fas fa-heart"></a>
+   
 </div>
 
 <form action="" class="search-form">
@@ -28,4 +30,5 @@ var navBar_temp = `
 </form>
     `;
 
-$("#navbar").append(navBar_temp);
+$("#header").append(navBar_temp);
+

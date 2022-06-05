@@ -20,7 +20,7 @@
   
   </head>
 
-  <header class="header" id="navbar"></header>
+  <header class="header" id="header"></header>
  
 <body>
     
@@ -60,7 +60,7 @@
   var 제목;
 
 var 쿼리스트링 = new URLSearchParams(window.location.search);
-db.collection('t-shirts').doc(쿼리스트링.get('id')).get().then((result)=>{
+db.collection('shirts').doc(쿼리스트링.get('id')).get().then((result)=>{
     
     
        
@@ -105,7 +105,8 @@ db.collection('t-shirts').doc(쿼리스트링.get('id')).get().then((result)=>{
 
     
 </script>
-<script src="js/Component/navBar.js"></script>
+<script type="text/javascript" src="js/Component/navBar.js"></script>
+<script type="text/javascript" src="js/Component/login.js"></script>
 </body>
 </html>
 

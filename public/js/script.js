@@ -308,22 +308,11 @@ function initDropEffect(box){
 var input = document.getElementById("input");
 var initLabel = document.getElementById("label");
 
-input.addEventListener("change", (event) => {
-  const files = changeEvent(event);
-  handleUpdate(files);
-});
 
-initLabel.addEventListener("mouseover", (event) => {
-  event.preventDefault();
-  const label = document.getElementById("label");
-  label?.classList.add("label--hover");
-});
 
-initLabel.addEventListener("mouseout", (event) => {
-  event.preventDefault();
-  const label = document.getElementById("label");
-  label?.classList.remove("label--hover");
-});
+
+
+
 
 document.addEventListener("dragenter", (event) => {
   event.preventDefault();
@@ -411,19 +400,7 @@ function el(nodeName, attributes, ...children) {
   return node;
 }
 
-var navBar_temp = `      
-<a href="#products">customed products</a>
-<a href="T-shirts.html">T-shirts</a>
-<a href="mtm.html">MTM</a>
-<a href="shirts.html">shirts</a>
-<a href="sample_logo.html">LOGO</a>
-<a target="_blank" href="https://pixlr.com/e">customizing editor</a>
-<a href="upload.html">Product upload</a>
-<a href="qna.html">NOTICE</a>
-<a href="qna.html">Q&A</a>
-    `;
 
-$('#navbar').append(navBar_temp);
 
 
 

@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="css/style.css">
     
     </head>
-    <header class="header" id="navbar"></header>
+     <header class="header" id="header"></header>
    
 <body>
     <section class="home" id="home">
@@ -178,7 +178,7 @@ db.collection('mtm').doc(쿼리스트링.get('id')).get().then((result)=>{
     
     var 템플릿2 = `
     <a  href="upload.html" class="btn">I have finished all of it</a></br>
-    <a href="basic_product.html?id=${result.id}" class="btn">buying basic ${result.id} </a>
+    <a href="basic_mtm.html?id=${result.id}" class="btn">buying basic ${result.id} </a>
     
    `
    $('#content').append(템플릿2)
@@ -190,6 +190,7 @@ db.collection('mtm').doc(쿼리스트링.get('id')).get().then((result)=>{
     })
 </script>
 <script type="text/javascript" src="js/Component/navBar.js"></script>
+<script type="text/javascript" src="js/Component/login.js"></script>
 
 </body>
 </html>

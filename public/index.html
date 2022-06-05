@@ -21,7 +21,7 @@
       
   </head>
 
-  <header class="header" id="navbar">
+  <header class="header" id="header">
 
     
 
@@ -170,14 +170,7 @@
       
  
   </script>
- <script>
-    firebase.auth().onAuthStateChanged((user)=>{
-      if (user) {
-        console.log(user)
-        $('#userName').html(user.displayName)
-      }
-    })
-    </script>
+ 
 <script>
     const db = firebase.firestore();
     
@@ -218,6 +211,7 @@
   </script>
 
 <script type="text/javascript" src="js/Component/navBar.js"></script>
+<script type="text/javascript" src="js/Component/login.js"></script>
 </body>
 </html>
 
