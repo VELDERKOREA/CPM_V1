@@ -177,9 +177,10 @@ db.collection('mtm').doc(쿼리스트링.get('id')).get().then((result)=>{
     }
     
     var 템플릿2 = `
-    <a  href="upload.html" class="btn">I have finished all of it</a></br>
+    <a href="upload_mtm.html?id=${result.id}" class="btn">I have finished all of it</a></br>
     <a href="basic_mtm.html?id=${result.id}" class="btn">buying basic ${result.id} </a>
-    
+    <a  href="model_mtm.html?id=${result.id}" class="btn">Upload my model picture</a></br>
+ 
    `
    $('#content').append(템플릿2)
 
@@ -187,6 +188,43 @@ db.collection('mtm').doc(쿼리스트링.get('id')).get().then((result)=>{
 
 
 
+    })
+
+    db.collection('mtm').doc(쿼리스트링.get('id')).collection('model_cut').get().then((결과)=>{
+      결과.forEach((doc)=>{
+       
+        var 템플릿 = `      
+       
+           
+        <h5 class="title">
+            
+            <a  target="_blank" href="https://pixlr.com/e/?image=${doc.data().썸네일이미지}" >
+                
+                
+                
+                <div class="box-container" >
+        <div class="box" id="seller">
+                
+            <div class="image">
+            <img src="${doc.data().썸네일이미지}" alt="">
+        </div>  
+        <div class="content">
+            <h3>Select & Save </h3>
+            <h2>basic t-shirts</h2>
+            <div class="price">
+                <div class="amount">$${doc.data().가격}</div>
+                <div class="cut">$${(doc.data().가격)*1.2}</div>
+                <div class="offer">20% off</div>
+            </div>
+           
+        </div>
+        </div>
+            </div>
+       
+            </a></h5>
+       `;
+        $('#seller').append(템플릿)
+      })
     })
 </script>
 <script type="text/javascript" src="js/Component/navBar.js"></script>

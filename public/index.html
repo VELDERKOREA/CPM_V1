@@ -39,7 +39,7 @@
                     <div class="content">
                         
                         <h3>LOGO</h3>
-                        <a href="T-shirts.html" class="btn">make now</a>
+                        <a href="sample_logo.html" class="btn">make now</a>
                     </div   >
                 </div>
 
@@ -64,6 +64,13 @@
                         
                         <h3>SHIRTS</h3>
                         <a href="shirts.html" class="btn">make now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide slide" style="background:url(image/Tshbanner.jpg) no-repeat">
+                    <div class="content">
+                        
+                        <h3>Armwarmer</h3>
+                        <a href="Armwarmer.html" class="btn">make now</a>
                     </div>
                 </div>
     
@@ -176,6 +183,7 @@
     
     db.collection('product_thum').get().then((결과)=>{
       결과.forEach((doc)=>{
+          
         console.log(doc)
         var 템플릿 = `      
         <h5 class="title">

@@ -34,7 +34,8 @@
                     <span>Customizing Logo Images to Use in pixlr </span></br>
                     <span></span>
                     <a target="_blank"href="https://pixabay.com/ko/vectors/" class="btn">More Free Logo Images</a></BR>
-                    <a target="_blank"href="https://pixlr.com/kr/e/#editor" class="btn">Modify downloaded image</a>
+                    <a target="_blank"href="https://pixlr.com/kr/e/#editor" class="btn">Modify downloaded image</a></br>
+                    <a href="https://pixlr.com/kr/e/#editor" class="btn">upload my logo</a>
                 </div>
             </div>
 
@@ -108,11 +109,14 @@
         var 템플릿 = `      
         <h5 class="title">
             
-            <a href="select_sample_logo.html?id=${doc.id}">
+            <a href="select_sample_logo.html?id=${doc.id}" >
                 
                 <div class="box-container" >
         <div class="box" id="seller">
-                
+            
+               
+               
+              
             <div class="image">
             <img src="${doc.data().이미지[0]}" alt="">
         </div>

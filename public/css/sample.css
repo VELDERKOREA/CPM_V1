@@ -50,8 +50,8 @@ p {
   align-items: center;
 }
 .upload__img-box {
-  width: 50rem;
-  height: AUTO;
+  width: 100rem;
+  height:100rem;
   
   margin-bottom: 12px;
 }
@@ -80,8 +80,8 @@ p {
   background-position: center;
   background-size: cover;
   position: relative;
-  width: auto;
-  height: 50rem;
+  width: 100rem;
+  height: 100rem;
   flex-direction: column;
   flex-wrap: nowrap;
 }
