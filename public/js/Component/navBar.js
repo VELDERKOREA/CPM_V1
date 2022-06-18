@@ -3,8 +3,9 @@ var navBar_temp = `
 
 <nav class="navbar" id="navbar">
    
-    <a href="#products">customed products</a>
+    
     <a href="T-shirts.html">T-shirts</a>
+    <a href="ArmWarmer.html">ArmWarmer</a>
     <a href="mtm.html">MTM</a>
     <a href="shirts.html">shirts</a>
     <a href="sample_logo.html">LOGO</a>
@@ -16,7 +17,9 @@ var navBar_temp = `
 <div class="icons">
    
     <a id="userName"></a>
-    <button id="logout"></button>
+    <a id=logout> 
+    <button></button>
+    </a>
     <div id="menu-btn" class="fas fa-bars"></div>
     <div id="search-btn" class="fas fa-search"></div>
     <a href="#" class="fas fa-shopping-cart"></a>

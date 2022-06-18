@@ -41,7 +41,7 @@
 			<span>or use your account</span>
 			<input type="email" placeholder="Email" id="email" />
 			<input type="password" placeholder="Password" id="pw" />
-			<a href="#">Forgot your password?</a>
+			<a>Forgot your password?</a>
 			<button id="login">Sign In</button>
 		</form>
 	</div>
@@ -106,9 +106,12 @@ $('#login').click(function(){
 
   firebase.auth().signInWithEmailAndPassword(이메일, 패스워드).then((result)=>{
     console.log(result.user)
-    window.location.href ="index.html"
+   login();
   })
 })
+  function login(){
+	window.location.href ="index.html"
+  }
   function userUpdate(){
     var user ={
       이름 : $('#New_name').val(),
@@ -118,7 +121,7 @@ $('#login').click(function(){
     db.collection('userdata').add(user)
   }
 </script>
-<script type="text/javascript" src="js/Component/navBar.js"></script>
+
 <script type="text/javascript" src="js/Component/login.js"></script>
 </body>
 

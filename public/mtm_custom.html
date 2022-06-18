@@ -17,8 +17,7 @@
         <link rel="stylesheet" href="css/style.css">
     
     </head>
-     <header class="header" id="header"></header>
-   
+    <header class="header" id="header"></header>
 <body>
     <section class="home" id="home">
 
@@ -131,7 +130,9 @@
   </script>
 <script>
 
-  const db = firebase.firestore();      
+  const db = firebase.firestore();     
+  
+  
   var 제목;
 
 var 쿼리스트링 = new URLSearchParams(window.location.search);
@@ -156,11 +157,11 @@ db.collection('mtm').doc(쿼리스트링.get('id')).get().then((result)=>{
         </div>  
         <div class="content">
             <h3>Select & Save </h3>
-            <h2>basic MTM</h2>
+            <h2>Model Image Costs : free</h2>
             <div class="price">
-                <div class="amount">$${result.data().가격}</div>
-                <div class="cut">$${(result.data().가격)*1.2}</div>
-                <div class="offer">20% off</div>
+                <div class="amount">${result.data().가격} KRW</div>
+                <div class="cut">${(result.data().가격)*1.2} KRW</div>
+               
             </div>
            
         </div>
@@ -175,12 +176,14 @@ db.collection('mtm').doc(쿼리스트링.get('id')).get().then((result)=>{
     
    
     }
+
+    
     
     var 템플릿2 = `
-    <a href="upload_mtm.html?id=${result.id}" class="btn">I have finished all of it</a></br>
-    <a href="basic_mtm.html?id=${result.id}" class="btn">buying basic ${result.id} </a>
+    <a  href="upload_mtm.html?id=${result.id}" class="btn">I have finished all of it</a></br>
+    <a href="basic_mtm.html?id=${result.id}" class="btn">buying basic ${result.id} </a></br>
     <a  href="model_mtm.html?id=${result.id}" class="btn">Upload my model picture</a></br>
- 
+    
    `
    $('#content').append(템플릿2)
 
@@ -192,7 +195,7 @@ db.collection('mtm').doc(쿼리스트링.get('id')).get().then((result)=>{
 
     db.collection('mtm').doc(쿼리스트링.get('id')).collection('model_cut').get().then((결과)=>{
       결과.forEach((doc)=>{
-       
+        db.collection('mtm').doc(쿼리스트링.get('id')).get().then((result)=>{
         var 템플릿 = `      
        
            
@@ -210,11 +213,11 @@ db.collection('mtm').doc(쿼리스트링.get('id')).get().then((result)=>{
         </div>  
         <div class="content">
             <h3>Select & Save </h3>
-            <h2>basic t-shirts</h2>
+            <h2>Model Image Costs : ${doc.data().가격} KRW</h2>
             <div class="price">
-                <div class="amount">$${doc.data().가격}</div>
-                <div class="cut">$${(doc.data().가격)*1.2}</div>
-                <div class="offer">20% off</div>
+                <div class="amount">${result.data().가격} KRW</div>
+                <div class="cut">${(result.data().가격)*1.2} KRW</div>
+               
             </div>
            
         </div>
@@ -226,10 +229,10 @@ db.collection('mtm').doc(쿼리스트링.get('id')).get().then((result)=>{
         $('#seller').append(템플릿)
       })
     })
+    })
 </script>
 <script type="text/javascript" src="js/Component/navBar.js"></script>
 <script type="text/javascript" src="js/Component/login.js"></script>
-
 </body>
 </html>
 
