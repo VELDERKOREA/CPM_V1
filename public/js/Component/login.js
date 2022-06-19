@@ -14,6 +14,6 @@ firebase.auth().onAuthStateChanged((user)=>{
 
   $('#logout').click(function(){
     firebase.auth().signOut()
-    window.location.href = "index.html"
+    history.go(0);
     console.log("logout")
   })
